@@ -1,3 +1,5 @@
+Forked from alyssaq/face_morpher and adapted for use by [douglasgoodwin](https://github.com/douglasgoodwin)
+
 Face Morpher
 ============
 
@@ -15,6 +17,7 @@ Requirements
 -  ``pip install -r requirements.txt``
 - Download `http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2` and extract file.
 - Export environment variable ``DLIB_DATA_DIR`` to the folder where ``shape_predictor_68_face_landmarks.dat`` is located. Default ``data``. E.g ``export DLIB_DATA_DIR=/Downloads/data``
+- Build and install the face morpher software ``python setup.py install``
 
 Either:
 
@@ -28,7 +31,7 @@ Use as local command-line utility
 ---------------------------------
 ::
 
-    $ git clone https://github.com/alyssaq/face_morpher
+    $ git clone https://github.com/douglasgoodwin/face_morpher
 
 Morphing Faces
 --------------
