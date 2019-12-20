@@ -1,3 +1,4 @@
 *.pyc
 *.swp
 MANIFEST
+.DS_Store
