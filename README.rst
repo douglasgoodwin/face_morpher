@@ -162,22 +162,22 @@ Create a morphing video between the 2 images:
 
 (out.avi played and recorded as gif)
 
-.. figure:: https://raw.github.com/alyssaq/face_morpher/master/examples/being_john_malvokich.gif
+.. figure:: https://raw.githubusercontent.com/douglasgoodwin/face_morpher/master/examples/buster2ruth.gif
    :alt: gif
 
 Save the frames to a folder:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| ``> python facemorpher/morpher.py --src=alyssa.jpg --dest=john_malkovich.jpg``
+| ``> python facemorpher/morpher.py --src=Busterkeaton_early.jpeg --dest=Ruth_Vega_Fernandez.jpeg``
 | ``--out_frames=out_folder --num=30``
 
 Plot the frames:
 ^^^^^^^^^^^^^^^^
 
-| ``> python facemorpher/morpher.py --src=alyssa.jpg --dest=john_malkovich.jpg``
+| ``> python facemorpher/morpher.py --src=Busterkeaton_early.jpeg --dest=Ruth_Vega_Fernandez.jpeg``
 | ``--num=12 --plot``
 
-.. figure:: https://raw.github.com/alyssaq/face_morpher/master/examples/plot.png
+.. figure:: https://raw.githubusercontent.com/douglasgoodwin/face_morpher/master/examples/plot.png
    :alt: plot
 
 Average all face images in a folder:
@@ -188,7 +188,7 @@ Average all face images in a folder:
 | ``> python facemorpher/averager.py --images=images --blur --background=transparent``
 | ``--width=220 --height=250``
 
-.. figure:: https://raw.github.com/alyssaq/face_morpher/master/examples/average_faces.png
+.. figure:: https://raw.githubusercontent.com/douglasgoodwin/face_morpher/master/examples/average.png
    :alt: average\_faces
 
 .. _`Use as pip library`:
@@ -224,19 +224,7 @@ Once pip installed, 2 binaries are also available as a command line utility:
     $ facemorpher --src=<src_imgpath> --dest=<dest_imgpath> --plot
     $ faceaverager --images=<images_folder> --plot
 
-Try out in a docker container
----------------------------------
-Mount local folder to `/images` in docker container, run it and enter a bash session.
---rm removes the container when you close it.
-::
 
-    $ docker run -v  /Users/alyssa/Desktop/images:/images --name py3 --rm -it jjanzic/docker-python3-opencv bash
-
-Once you're in the container, install ``facemorpher`` and try the examples listed above
-::
-
-    root@0dad0912ebbe:/# pip install facemorpher
-    root@0dad0912ebbe:/# facemorpher --src=<img1> --dest=<img2> --plot
 
 Documentation
 -------------
