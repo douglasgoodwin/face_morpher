@@ -1,3 +1,5 @@
+Forked from alyssaq/face_morpher and adapted for use by [douglasgoodwin](https://github.com/douglasgoodwin)
+
 Face Morpher
 ============
 
@@ -5,18 +7,17 @@ Face Morpher
 | Scripts will automatically detect frontal faces and skip images if
   none is detected.
 
-Built with Python, OpenCV, Numpy, Scipy, Stasm.
+Built with Python, `dlib`_, Numpy, Scipy, dlib.
 
-| Supported on Python 2.7, Python 3.6+ and OpenCV 3.4 (tested with OpenCV 3.4.5)
-| Does NOT work with OpenCV 4.
-| To install OpenCV 3.4.5: ``brew install opencv@3``
+| Supported on Python 2.7, Python 3.6+
 | Tested on macOS Mojave and 64bit Linux (dockerized).
 
 Requirements
 --------------
--  Install `OpenCV`_: `Mac installation steps`_
--  Note: OpenCV 3 must be installed either from `Homebrew`_ or `source`_ as stasm requires the library files.
 -  ``pip install -r requirements.txt``
+- Download `http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2` and extract file.
+- Export environment variable ``DLIB_DATA_DIR`` to the folder where ``shape_predictor_68_face_landmarks.dat`` is located. Default ``data``. E.g ``export DLIB_DATA_DIR=/Downloads/data``
+- Build and install the face morpher software ``python setup.py install``
 
 Either:
 
@@ -30,7 +31,7 @@ Use as local command-line utility
 ---------------------------------
 ::
 
-    $ git clone https://github.com/alyssaq/face_morpher
+    $ git clone https://github.com/douglasgoodwin/face_morpher
 
 Morphing Faces
 --------------
@@ -72,7 +73,7 @@ All options listed in ``morpher.py`` (pasted below):
         --fps=<fps>             Number frames per second for the video [default: 10]
         --out_frames=<folder>   Folder path to save all image frames
         --out_video=<filename>  Filename to save a video
-        --plot                  Flag to plot images [default: False]
+        --plot                  Flag to plot images to result.png [default: False]
         --background=<bg>       Background of images to be one of (black|transparent|average) [default: black]
         --version               Show version.
 
@@ -115,7 +116,7 @@ Steps (facemorpher folder)
 1. Locator
 ^^^^^^^^^^
 
--  Locates face points (using `stasm`_)
+-  Locates face points
 -  For a different locator, return an array of (x, y) control face
    points
 
@@ -237,10 +238,6 @@ Once you're in the container, install ``facemorpher`` and try the examples liste
     root@0dad0912ebbe:/# pip install facemorpher
     root@0dad0912ebbe:/# facemorpher --src=<img1> --dest=<img2> --plot
 
-Details
-------------
--  Face points are detected with stasm. This library relies on the `python wrapper around stasm`_.
-
 Documentation
 -------------
 
@@ -263,5 +260,4 @@ License
 .. _OpenCV: http://opencv.org
 .. _Homebrew: https://brew.sh
 .. _source: https://github.com/opencv/opencv
-.. _python wrapper around stasm: https://github.com/alyssaq/stasm
-.. _stasm: http://www.milbo.users.sonic.net/stasm
+.. _dlib: http://dlib.net

@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
   name='facemorpher',
-  version='5.2.1',
+  version='5.2.dev0',
   author='Alyssa Quek',
   author_email='alyssaquek@gmail.com',
   description=('Warp, morph and average human faces!'),
@@ -18,7 +18,7 @@ setup(
     'numpy',
     'scipy',
     'matplotlib',
-    'stasm'
+    'dlib'
   ],
   entry_points={'console_scripts': [
       'facemorpher=facemorpher.morpher:main',
